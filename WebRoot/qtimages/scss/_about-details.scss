@@ -1,0 +1,29 @@
+.about-details{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @media #{$md}{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @media #{$sm}{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media #{$xs}{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .about-pera{
+        padding-bottom: 50px;
+        @media #{$sm}{
+            padding-bottom: 30px;
+        }
+        @media #{$xs}{
+            padding-bottom: 30px;
+        }
+        p{
+            color: #707070;
+        }
+        
+    }
+}

@@ -1,0 +1,173 @@
+.best-selling{
+        padding-top: 95px;
+		padding-bottom: 100px;
+		@media #{$md}{
+			padding-top: 95px;
+			padding-bottom: 100px;
+		}
+		@media #{$sm}{
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+		@media #{$xs}{
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+    .properties{
+        margin: 0 12px;
+        &:first-child{
+            margin-left: 0;
+        }
+        &:last-child{
+            margin-right: 0;
+            margin-left: 0;
+        }
+        &.properties2{
+           margin-bottom: 30px;
+        }
+        .properties-card{
+            background-color: #fff;
+            .properties-img{
+                img{
+                    width: 100%;
+                }
+            }
+            .properties-caption{
+                padding: 14px 20px 2px 20px;
+                @include transition(.4s);
+                &.properties-caption2{
+                    border: 1px solid #EEE1E0;
+                    border-top: 0;
+                }
+                h3{
+                    a{
+                        font-size: 20px;
+                        font-weight: 700;
+                        margin-bottom: 6px;
+                        color: $heading-color;
+                        @media #{$lg}{
+                            font-size: 16px;
+                        }
+                    }
+                }
+                P{
+                    color:#9498A7;
+                    font-size: 14px;
+                    margin-bottom: 11px;
+                    span{
+                        color:$theme-color;
+                        font-size: 16px;
+                        @media #{$md}{
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .properties-footer{
+                     @include transition(.4s);
+                     @media #{$xs}{
+                        padding: 19px 10px 20px 12px;
+                     }
+                    .review{
+                        .rating {
+                            i {
+                                font-size: 13px;
+                                color: #FF5700;
+                            }
+                        }
+                        p{
+                            display: inline-block;
+                            color:#9498A7;
+                            font-size: 14px;
+                            span{
+                                color:#FF7B2E ;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .price{
+                        span{
+                            cursor: pointer;
+                            font-weight:500;
+                            color:$theme-color;
+                            font-size: 22px;
+                        }
+                    }
+                               
+                }
+               
+            }
+        }
+        &:hover{
+            .properties-caption{
+                box-shadow: 0px 15px 30px rgba(255, 22, 22,.1);
+                h3{
+                   a{
+                    color: $theme-color;
+                   }
+                }
+            }
+        }
+    }
+}
+
+
+// Arrow
+.selling-active{
+    button{
+        &.slick-arrow {
+            position: absolute;
+            border: 0;
+            padding: 0;
+            z-index: 2;
+            cursor: pointer;
+            top: 50%;
+            transform: translateY(-50%);
+            left: auto;
+            background: none;
+            i{
+                font-size: 30px;
+                color: rgba(32, 69, 112,.3);
+                @include transition(.2s);
+                &:hover{
+                    color: $theme-color;
+                }
+            }
+        }
+        &.slick-prev {
+            left: -40px;
+            @media #{$laptop}{
+               left: -20px;
+            }
+            @media #{$large1}{
+               left: -30px;
+            }
+            @media #{$lg}{
+               left: -30px;
+            }
+            @media #{$md}{
+               left: -20px;
+            }
+            @media #{$sm}{
+               left: -10px;
+            }
+        }
+        &.slick-next {
+            right: -40px;
+            @media #{$laptop}{
+                right: -20px;
+             }
+            @media #{$large1}{
+                right: -30px;
+             }
+            @media #{$lg}{
+                right: -30px;
+            }
+            @media #{$md}{
+                right: -20px;
+            }
+            @media #{$sm}{
+                right: -10px;
+            }
+        }
+    }
+}

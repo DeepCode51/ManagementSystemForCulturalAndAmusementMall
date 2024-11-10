@@ -1,0 +1,122 @@
+
+/*-------------   Color Variable  --------------*/
+
+//Colors
+	$white: #ffffff;
+	$white_color:#ffff;
+	$black: #16161a;
+	$gray:#F1FBFF;
+	
+//Theme color
+	$theme-color: #FF1616;
+	$theme-color2: #1f2b7b;
+	$theme-color3: #f27420;
+	$theme-color4: #ff3500;
+
+// btn and Section color
+	$btn_bg:#FF1616;
+
+// Heading color
+	$heading-color:#232F55;
+	$heading_color2: #080808;
+	$title-color:#232F55;
+// Body font color
+	$font_color1: #301A22;
+	$font_color2:#1D2547;
+	$body-text-color: #301A22;
+
+// Border color
+	$border-color:#F1F4F8;
+	$hr-border-color:#eceff8;
+
+// Section Bg
+	$section_bg1: #FEF4F4;
+
+
+
+	$gray-color: #bebebe;
+	$gray-color-2: #bdbdbd;
+
+
+
+
+// bg
+	$brand-bg: #f1f4fa;
+	$testimonial-bg:#f9fafc;
+
+
+
+/*-------------Color include--------------*/
+
+
+/*-- Background color---*/
+.section-bg{
+	background-color:$section_bg1 ;
+}
+.gray-bg {
+	background: $gray;
+}
+.white-bg {
+	background:$white;
+}
+.black-bg {
+	background: $black;
+}
+.theme-bg {
+	background:$theme-color;
+}
+.brand-bg{
+	background: $brand-bg;
+}
+.testimonial-bg{
+	background: $testimonial-bg;
+}
+
+
+/*--- color------*/
+.white-color {
+	color: $white;
+}
+.black-color {
+	color: $black;
+}
+.theme-color {
+	color: $theme-color;
+}
+
+
+
+
+// Extra include
+
+	$primary-color  : #2f7dfc;
+	$title-color    : #2a2a2a;
+	$text-color     : #797979;
+	$offwhite       : #f6f6f6;
+	$white: #fff;
+	$section_bg: #f4f4f4;
+	$white_color: #fff;
+	$black_color: #000;
+	$menu_color: #000;
+	$icon_color: #0c2e60;
+	$icon_bg: #f0f4f6;
+	$author_text_color: #556172;
+	$section_bg: #f4f4f4;
+	$color_1: #f8fbff;
+	$color_2: #fffbf9;
+	$color_3: #fafafa;
+	$color_4: #fffcf4;
+	$primary_color: #2f7dfc;
+	$btn_hover: #f5790b;
+	$section_bg_1: #e8f0f2;
+	$heading_color: #1a1a1a;
+	$heading_color2: #ff8b23;
+	$p_color: #606060; 
+	// $font_5: #999999;
+	// $font_6: #666666;
+	// $font_7: #777777;
+	// $font_8: #888888;
+	// $font_d: #dddddd;
+	$border_color: #edeff2;
+	$footer_bg: #303030;
+	$sidebar_bg: #fbf9ff;

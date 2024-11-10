@@ -1,0 +1,288 @@
+.login-bg{
+    height: 100vh;
+    background-size:cover ;
+    background-repeat:no-repeat ;
+    background-position: center center;
+    background-image: url(../img/hero/h1_hero.png);  
+}
+.login-form-area{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    min-height: 100vh;
+    padding: 15px 0;
+    .login-form{
+        background:#fff;
+        padding: 55px 60px 50px 50px;
+        box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+        min-width: 700px;
+        @media #{$sm}{
+            padding: 40px 20px 20px 26px;
+            min-width: 95%;
+         }
+        @media #{$xs}{
+            padding: 40px 20px 20px 26px;
+            min-width: 95%;
+         }
+        .login-heading{
+            text-align: center;
+            span{
+                color: #140C40;
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                display: block;
+                text-transform: capitalize;
+            }
+            p{
+
+            }
+        }
+        // Input Box
+        .input-box{
+            padding-top: 35px;
+            padding-bottom: 75px;
+            @media #{$xs}{
+                padding-top: 28px;
+                padding-bottom: 10px;
+             }
+            .single-input-fields{
+                label {
+                    display: block;
+                    font-size: 17px;
+                    margin-bottom: 6px;
+                    color: #140C40;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    text-align: left;
+                 }
+                 input {
+                    border: 1px solid #C9C9C9;
+                     width: 100%;
+                     height: 50px;
+                     margin-bottom: 20px;
+                     padding: 0 25px;
+                     color: #000;
+                     &::placeholder{
+                         color: #777777;
+                         font-weight: 300;
+                         font-size: 13px;
+                     }
+                 }
+             }
+
+        }
+        // login Footer
+        .login-footer {
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            @media #{$sm}{
+                display: block;
+                text-align: start;
+            }
+            @media #{$xs}{
+                display: block;
+                text-align: start;
+            }
+            p{
+                margin: 0;
+                @media #{$sm}{
+                    margin-bottom: 28px;
+                    display: block;
+                }
+                @media #{$xs}{
+                    margin-bottom: 28px;
+                    display: block;
+                }
+                a{
+                    color: $theme-color;
+                }
+               
+            }
+        }
+
+    }
+}
+// login-check Box and Footer
+.login-check{
+  @include flexbox();
+  @include justify-content(space-between);
+    padding-top: 8px;
+    overflow: hidden;
+    @media #{$xs}{
+        display: block;
+    }
+    input[type=checkbox] + label {
+        display: inline-block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0;
+        margin: 0 0 13px 0;
+
+    }
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    
+input[type="checkbox"] + label::before {
+        content: "\2714";
+        border: 0.1em solid #e4e4e4;
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding-left: 0.2em;
+        padding-bottom: 0.3em;
+        margin-right: 10px;
+        vertical-align: bottom;
+        color: transparent;
+        transition: .2s;
+    }
+    input[type=checkbox] + label:active:before {
+        transform: scale(0);
+    }
+    
+    input[type=checkbox]:checked + label:before {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        color: #fff;
+        line-height: 18px;
+    }
+
+    //   Forgot Password 
+    a{
+        color: $theme-color;
+        font-size: 14px;
+        font-weight: 400;
+        &:hover{
+            color: $theme-color;
+        }
+        @media #{$xs}{
+            float: left;
+            display: block;
+            padding-top: 7px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Registration
+.register-form-area{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    min-height: 100vh;
+    padding: 15px 0;
+    .register-form{
+        background:#fff;
+        padding: 55px 60px 50px 50px;
+        box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+        min-width: 700px;
+        @media #{$sm}{
+            padding: 40px 20px 20px 26px;
+            min-width: 95%;
+         }
+        @media #{$xs}{
+            padding: 40px 20px 20px 26px;
+            min-width: 95%;
+         }
+        .register-heading{
+            text-align: center;
+            span{
+                color: #140C40;
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                display: block;
+                text-transform: capitalize;
+            }
+            p{
+
+            }
+        }
+        // Input Box
+        .input-box{
+            padding-top: 35px;
+            padding-bottom: 60px;
+            @media #{$xs}{
+                padding-top: 28px;
+                padding-bottom: 20px;
+             }
+            .single-input-fields{
+                label {
+                    display: block;
+                    font-size: 17px;
+                    margin-bottom: 6px;
+                    color: #140C40;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    text-align: left;
+                 }
+                 input {
+                    border: 1px solid #C9C9C9;
+                     width: 100%;
+                     height: 50px;
+                     margin-bottom: 20px;
+                     padding: 0 25px;
+                     color: #000;
+                     &::placeholder{
+                         color: #777777;
+                         font-weight: 300;
+                         font-size: 13px;
+                     }
+                 }
+             }
+
+        }
+        .register-footer{
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            @media #{$sm}{
+                display: block;
+                text-align: start;
+            }
+            @media #{$xs}{
+                display: block;
+                text-align: start;
+            }
+
+            p{
+                margin: 0;
+                @media #{$sm}{
+                    margin-bottom: 28px;
+                    display:block;
+                }
+                @media #{$xs}{
+                    margin-bottom: 28px;
+                    display:block;
+                }
+                a{
+                    color: $theme-color;
+                }
+               
+            }
+        }
+
+    }
+}
+
+
+
+.submit-btn3 {
+	background: $btn_bg;
+	height: 60px;
+	padding: 10px 43px;
+	border: 0;
+	color: #fff;
+	text-transform: capitalize;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 0px;
+}
+
+
+
+

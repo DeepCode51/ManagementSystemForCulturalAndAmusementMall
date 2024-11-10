@@ -1,0 +1,59 @@
+// About Area
+.support-company-area{
+	background:#FCF8F9;
+    .support-location-img{
+		position: relative;
+		@media #{$md}{
+			right: 0px;
+			margin-bottom: 40px;
+		}
+		@media #{$sm}{
+			right: 0px;
+			margin-bottom: 40px;
+		}
+		@media #{$xs}{
+			right: 0px;
+			margin-bottom: 40px;
+		}
+        img{
+            width: 100%;
+		}
+		// Shape
+		.about-shape{
+			position: absolute;
+			left: -94px;
+			bottom: -93px;
+			z-index: -1;
+		}
+	}
+	// Right Content
+	.right-caption{
+		position: relative;
+		.support-caption{
+			span{
+				color: #FF6162;
+				font-size: 25px;
+				margin-bottom: 20px;
+				display: block;
+				@media #{$xs}{
+					font-size: 20px;
+				}
+			}
+			p.pera-top{
+				font-weight: 300;
+				margin-bottom: 40px;
+				@media #{$sm}{
+					margin-bottom: 25px;
+				}
+				@media #{$xs}{
+					margin-bottom: 25px;
+				}
+			}
+			p{
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 1.8;
+			}
+		}
+	}
+}

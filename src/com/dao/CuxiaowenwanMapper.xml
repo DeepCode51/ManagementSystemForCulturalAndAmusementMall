@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CuxiaowenwanMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Cuxiaowenwan">
+    <id column="id" jdbcType="INTEGER" property="id" />
+	<result column="wenwanbianhao" jdbcType="VARCHAR" property="wenwanbianhao" />    <result column="wenwanmingcheng" jdbcType="VARCHAR" property="wenwanmingcheng" />    <result column="wenwanleibie" jdbcType="VARCHAR" property="wenwanleibie" />    <result column="wenwantupian" jdbcType="VARCHAR" property="wenwantupian" />    <result column="kucun" jdbcType="VARCHAR" property="kucun" />    <result column="yuanjiage" jdbcType="VARCHAR" property="yuanjiage" />    <result column="cuxiaozhekou" jdbcType="VARCHAR" property="cuxiaozhekou" />    <result column="cuxiaojiage" jdbcType="VARCHAR" property="cuxiaojiage" />    <result column="wenwanjianjie" jdbcType="VARCHAR" property="wenwanjianjie" />    
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, wenwanbianhao,wenwanmingcheng,wenwanleibie,wenwantupian,kucun,yuanjiage,cuxiaozhekou,cuxiaojiage,wenwanjianjie, addtime
+  </sql>
+  <select id="quchongCuxiaowenwan"  parameterType="java.util.Map" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from cuxiaowenwan 
+    where wenwanbianhao = #{wenwanbianhao,jdbcType=VARCHAR} limit 0,1
+  </select>
+ <select id="getCount"   resultType="int" parameterType="java.util.Map" >
+    select  count(*) from cuxiaowenwan  where 1=1
+    <if test="wenwanbianhao!=null">and wenwanbianhao like  concat('%',#{wenwanbianhao,jdbcType=VARCHAR},'%')</if>     <if test="wenwanmingcheng!=null">and wenwanmingcheng like  concat('%',#{wenwanmingcheng,jdbcType=VARCHAR},'%')</if>     <if test="wenwanleibie!=null">and wenwanleibie like  concat('%',#{wenwanleibie,jdbcType=VARCHAR},'%')</if>     <if test="wenwantupian!=null">and wenwantupian like  concat('%',#{wenwantupian,jdbcType=VARCHAR},'%')</if>     <if test="kucun1!=null">and kucun &gt;=  concat('',#{kucun1,jdbcType=VARCHAR},'')</if>     <if test="kucun2!=null">and kucun &lt;=  concat('',#{kucun2,jdbcType=VARCHAR},'')</if>     <if test="yuanjiage1!=null">and yuanjiage &gt;=  concat('',#{yuanjiage1,jdbcType=VARCHAR},'')</if>     <if test="yuanjiage2!=null">and yuanjiage &lt;=  concat('',#{yuanjiage2,jdbcType=VARCHAR},'')</if>     <if test="cuxiaozhekou!=null">and cuxiaozhekou like  concat('%',#{cuxiaozhekou,jdbcType=VARCHAR},'%')</if>     <if test="cuxiaojiage1!=null">and cuxiaojiage &gt;=  concat('',#{cuxiaojiage1,jdbcType=VARCHAR},'')</if>     <if test="cuxiaojiage2!=null">and cuxiaojiage &lt;=  concat('',#{cuxiaojiage2,jdbcType=VARCHAR},'')</if>     <if test="wenwanjianjie!=null">and wenwanjianjie like  concat('%',#{wenwanjianjie,jdbcType=VARCHAR},'%')</if>     
+  </select> 
+  <select id="getAll"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from cuxiaowenwan  where 1=1
+    <if test="wenwanbianhao!=null">
+    and wenwanbianhao =#{wenwanbianhao}
+    </if>
+  </select>
+  
+  <select id="getsycuxiaowenwan1"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from cuxiaowenwan  where 1=1
+    limit 0,8
+  </select>
+  <select id="getsycuxiaowenwan2"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from cuxiaowenwan  where 1=1
+    limit 0,8
+  </select>
+  <select id="getsycuxiaowenwan3"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from cuxiaowenwan  where 1=1
+    limit 0,8
+  </select>
+  
+   <select id="getByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+     select  <include refid="Base_Column_List" /> 
+     from cuxiaowenwan where 1=1 
+     <if test="wenwanbianhao!=null">and wenwanbianhao like  concat('%',#{wenwanbianhao,jdbcType=VARCHAR},'%')</if>     <if test="wenwanmingcheng!=null">and wenwanmingcheng like  concat('%',#{wenwanmingcheng,jdbcType=VARCHAR},'%')</if>     <if test="wenwanleibie!=null">and wenwanleibie like  concat('%',#{wenwanleibie,jdbcType=VARCHAR},'%')</if>     <if test="wenwantupian!=null">and wenwantupian like  concat('%',#{wenwantupian,jdbcType=VARCHAR},'%')</if>     <if test="kucun1!=null">and kucun &gt;=  concat('',#{kucun1,jdbcType=VARCHAR},'')</if>     <if test="kucun2!=null">and kucun &lt;=  concat('',#{kucun2,jdbcType=VARCHAR},'')</if>     <if test="yuanjiage1!=null">and yuanjiage &gt;=  concat('',#{yuanjiage1,jdbcType=VARCHAR},'')</if>     <if test="yuanjiage2!=null">and yuanjiage &lt;=  concat('',#{yuanjiage2,jdbcType=VARCHAR},'')</if>     <if test="cuxiaozhekou!=null">and cuxiaozhekou like  concat('%',#{cuxiaozhekou,jdbcType=VARCHAR},'%')</if>     <if test="cuxiaojiage1!=null">and cuxiaojiage &gt;=  concat('',#{cuxiaojiage1,jdbcType=VARCHAR},'')</if>     <if test="cuxiaojiage2!=null">and cuxiaojiage &lt;=  concat('',#{cuxiaojiage2,jdbcType=VARCHAR},'')</if>     <if test="wenwanjianjie!=null">and wenwanjianjie like  concat('%',#{wenwanjianjie,jdbcType=VARCHAR},'%')</if>     
+	 order by id desc
+     <if test="pageno!=null and pageSize!=null">
+     limit #{pageno},#{pageSize}
+     </if>
+     </select>
+	 
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cuxiaowenwan
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cuxiaowenwan
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Cuxiaowenwan">
+    insert into cuxiaowenwan (id, wenwanbianhao,wenwanmingcheng,wenwanleibie,wenwantupian,kucun,yuanjiage,cuxiaozhekou,cuxiaojiage,wenwanjianjie, addtime)
+    values (#{id,jdbcType=INTEGER}, #{wenwanbianhao,jdbcType=VARCHAR},#{wenwanmingcheng,jdbcType=VARCHAR},#{wenwanleibie,jdbcType=VARCHAR},#{wenwantupian,jdbcType=VARCHAR},#{kucun,jdbcType=VARCHAR},#{yuanjiage,jdbcType=VARCHAR},#{cuxiaozhekou,jdbcType=VARCHAR},#{cuxiaojiage,jdbcType=VARCHAR},#{wenwanjianjie,jdbcType=VARCHAR}, #{addtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Cuxiaowenwan">
+    insert into cuxiaowenwan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="wenwanbianhao != null"> wenwanbianhao, </if>      <if test="wenwanmingcheng != null"> wenwanmingcheng, </if>      <if test="wenwanleibie != null"> wenwanleibie, </if>      <if test="wenwantupian != null"> wenwantupian, </if>      <if test="kucun != null"> kucun, </if>      <if test="yuanjiage != null"> yuanjiage, </if>      <if test="cuxiaozhekou != null"> cuxiaozhekou, </if>      <if test="cuxiaojiage != null"> cuxiaojiage, </if>      <if test="wenwanjianjie != null"> wenwanjianjie, </if>      
+      <if test="addtime != null">
+        addtime,
+      </if>
+      
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="wenwanbianhao != null"> #{wenwanbianhao,jdbcType=VARCHAR},</if>      <if test="wenwanmingcheng != null"> #{wenwanmingcheng,jdbcType=VARCHAR},</if>      <if test="wenwanleibie != null"> #{wenwanleibie,jdbcType=VARCHAR},</if>      <if test="wenwantupian != null"> #{wenwantupian,jdbcType=VARCHAR},</if>      <if test="kucun != null"> #{kucun,jdbcType=VARCHAR},</if>      <if test="yuanjiage != null"> #{yuanjiage,jdbcType=VARCHAR},</if>      <if test="cuxiaozhekou != null"> #{cuxiaozhekou,jdbcType=VARCHAR},</if>      <if test="cuxiaojiage != null"> #{cuxiaojiage,jdbcType=VARCHAR},</if>      <if test="wenwanjianjie != null"> #{wenwanjianjie,jdbcType=VARCHAR},</if>      
+      <if test="addtime != null">
+        #{addtime,jdbcType=VARCHAR},
+      </if>
+      
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Cuxiaowenwan">
+    update cuxiaowenwan
+    <set>
+	  <if test="wenwanbianhao != null"> wenwanbianhao = #{wenwanbianhao,jdbcType=VARCHAR},</if>      <if test="wenwanmingcheng != null"> wenwanmingcheng = #{wenwanmingcheng,jdbcType=VARCHAR},</if>      <if test="wenwanleibie != null"> wenwanleibie = #{wenwanleibie,jdbcType=VARCHAR},</if>      <if test="wenwantupian != null"> wenwantupian = #{wenwantupian,jdbcType=VARCHAR},</if>      <if test="kucun != null"> kucun = #{kucun,jdbcType=VARCHAR},</if>      <if test="yuanjiage != null"> yuanjiage = #{yuanjiage,jdbcType=VARCHAR},</if>      <if test="cuxiaozhekou != null"> cuxiaozhekou = #{cuxiaozhekou,jdbcType=VARCHAR},</if>      <if test="cuxiaojiage != null"> cuxiaojiage = #{cuxiaojiage,jdbcType=VARCHAR},</if>      <if test="wenwanjianjie != null"> wenwanjianjie = #{wenwanjianjie,jdbcType=VARCHAR},</if>      
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  
+  <update id="updateByPrimaryKey" parameterType="com.entity.Cuxiaowenwan">
+    update cuxiaowenwan
+    set wenwanbianhao = #{wenwanbianhao,jdbcType=VARCHAR},wenwanmingcheng = #{wenwanmingcheng,jdbcType=VARCHAR},wenwanleibie = #{wenwanleibie,jdbcType=VARCHAR},wenwantupian = #{wenwantupian,jdbcType=VARCHAR},kucun = #{kucun,jdbcType=VARCHAR},yuanjiage = #{yuanjiage,jdbcType=VARCHAR},cuxiaozhekou = #{cuxiaozhekou,jdbcType=VARCHAR},cuxiaojiage = #{cuxiaojiage,jdbcType=VARCHAR},wenwanjianjie = #{wenwanjianjie,jdbcType=VARCHAR},  addtime = #{addtime,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.TieziMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Tiezi">
+    <id column="id" jdbcType="INTEGER" property="id" />
+	<result column="bankuai" jdbcType="VARCHAR" property="bankuai" />
+    <result column="biaoti" jdbcType="VARCHAR" property="biaoti" />
+    <result column="leixing" jdbcType="VARCHAR" property="leixing" />
+    <result column="neirong" jdbcType="VARCHAR" property="neirong" />
+    <result column="fujian" jdbcType="VARCHAR" property="fujian" />
+    <result column="faburen" jdbcType="VARCHAR" property="faburen" />
+    <result column="issh" jdbcType="VARCHAR" property="issh" />
+    <result column="fid" jdbcType="VARCHAR" property="fid" />
+    
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, bankuai,biaoti,leixing,neirong,fujian,faburen,fid,issh,addtime
+  </sql>
+  <select id="quchongTiezi"  parameterType="java.util.Map" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from tiezi 
+    where faburen = #{faburen,jdbcType=VARCHAR} limit 0,1
+  </select>
+ <select id="getCount"   resultType="int" parameterType="java.util.Map" >
+    select  count(*) from tiezi  where 1=1
+    <if test="bankuai!=null">and bankuai like  concat('%',#{bankuai,jdbcType=VARCHAR},'%')</if>
+     <if test="biaoti!=null">and biaoti like  concat('%',#{biaoti,jdbcType=VARCHAR},'%')</if>
+     <if test="leixing!=null">and leixing like  concat('%',#{leixing,jdbcType=VARCHAR},'%')</if>
+     <if test="neirong!=null">and neirong like  concat('%',#{neirong,jdbcType=VARCHAR},'%')</if>
+     <if test="fujian!=null">and fujian like  concat('%',#{fujian,jdbcType=VARCHAR},'%')</if>
+     <if test="faburen!=null">and faburen like  concat('%',#{faburen,jdbcType=VARCHAR},'%')</if>
+     
+  </select> 
+  <select id="getAll"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from tiezi  where 1=1
+    <if test="faburen!=null">
+    and faburen =#{faburen}
+    </if>
+  </select>
+  
+  <select id="getsytiezi1"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from tiezi  where 1=1
+    limit 0,5
+  </select>
+  <select id="getsytiezi2"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from tiezi  where 1=1
+    limit 0,5
+  </select>
+  <select id="getsytiezi3"   resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select   <include refid="Base_Column_List" /> from tiezi  where 1=1
+    limit 0,5
+  </select>
+  
+   <select id="getByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+     select  <include refid="Base_Column_List" /> 
+     from tiezi where 1=1 
+     <if test="bankuai!=null">and bankuai like  concat('%',#{bankuai,jdbcType=VARCHAR},'%')</if>
+     <if test="biaoti!=null">and biaoti like  concat('%',#{biaoti,jdbcType=VARCHAR},'%')</if>
+     <if test="leixing!=null">and leixing like  concat('%',#{leixing,jdbcType=VARCHAR},'%')</if>
+     <if test="neirong!=null">and neirong like  concat('%',#{neirong,jdbcType=VARCHAR},'%')</if>
+     <if test="fujian!=null">and fujian like  concat('%',#{fujian,jdbcType=VARCHAR},'%')</if>
+     <if test="faburen!=null">and faburen like  concat('%',#{faburen,jdbcType=VARCHAR},'%')</if>
+     
+	 order by id desc
+     <if test="pageno!=null and pageSize!=null">
+     limit #{pageno},#{pageSize}
+     </if>
+     </select>
+	 
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tiezi
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tiezi
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Tiezi">
+    insert into tiezi (id, bankuai,biaoti,leixing,neirong,fujian,faburen,fid,addtime)
+    values (#{id,jdbcType=INTEGER}, #{bankuai,jdbcType=VARCHAR},#{biaoti,jdbcType=VARCHAR},#{leixing,jdbcType=VARCHAR},#{neirong,jdbcType=VARCHAR},#{fujian,jdbcType=VARCHAR},#{faburen,jdbcType=VARCHAR},#{fid,jdbcType=VARCHAR}, #{addtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Tiezi">
+    insert into tiezi
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bankuai != null"> bankuai, </if>
+      <if test="biaoti != null"> biaoti, </if>
+      <if test="leixing != null"> leixing, </if>
+      <if test="neirong != null"> neirong, </if>
+      <if test="fujian != null"> fujian, </if>
+      <if test="faburen != null"> faburen, </if>
+      <if test="fid != null"> fid, </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+      
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bankuai != null"> #{bankuai,jdbcType=VARCHAR},</if>
+      <if test="biaoti != null"> #{biaoti,jdbcType=VARCHAR},</if>
+      <if test="leixing != null"> #{leixing,jdbcType=VARCHAR},</if>
+      <if test="neirong != null"> #{neirong,jdbcType=VARCHAR},</if>
+      <if test="fujian != null"> #{fujian,jdbcType=VARCHAR},</if>
+      <if test="faburen != null"> #{faburen,jdbcType=VARCHAR},</if>
+      <if test="fid != null"> #{fid,jdbcType=VARCHAR},</if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=VARCHAR},
+      </if>
+      
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Tiezi">
+    update tiezi
+    <set>
+	  <if test="bankuai != null"> bankuai = #{bankuai,jdbcType=VARCHAR},</if>
+      <if test="biaoti != null"> biaoti = #{biaoti,jdbcType=VARCHAR},</if>
+      <if test="leixing != null"> leixing = #{leixing,jdbcType=VARCHAR},</if>
+      <if test="neirong != null"> neirong = #{neirong,jdbcType=VARCHAR},</if>
+      <if test="fujian != null"> fujian = #{fujian,jdbcType=VARCHAR},</if>
+      <if test="faburen != null"> faburen = #{faburen,jdbcType=VARCHAR},</if>
+      <if test="fid != null"> fid = #{fid,jdbcType=VARCHAR},</if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  
+  <update id="updateByPrimaryKey" parameterType="com.entity.Tiezi">
+    update tiezi
+    set bankuai = #{bankuai,jdbcType=VARCHAR},biaoti = #{biaoti,jdbcType=VARCHAR},leixing = #{leixing,jdbcType=VARCHAR},neirong = #{neirong,jdbcType=VARCHAR},fujian = #{fujian,jdbcType=VARCHAR},faburen = #{faburen,jdbcType=VARCHAR},  addtime = #{addtime,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

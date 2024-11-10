@@ -1,0 +1,71 @@
+
+
+
+
+// Tabs Button Style
+.nav-button{
+    .nav-tabs{
+        padding-bottom: 40px;
+        border: 0;
+        float:right;
+        @media #{$md}{
+            float:left
+        }
+        @media #{$sm}{
+            float:left
+        }
+        @media #{$xs}{
+            float:left
+        }
+        .nav-item {
+            display: block;
+            @media #{$xs}{
+                font-size: 18px;
+            }
+           
+        }
+        .nav-link {
+            color: #454E6D;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 7px 24px;
+            margin-right:8px;
+            border: 1px solid #EEE1E0;
+            border-radius: 20px;
+            @media #{$lg}{
+                padding: 7px 17px;
+            }
+            @media #{$sm}{
+                padding: 7px 17px;
+            }
+            @media #{$xs}{
+                padding: 7px 17px;
+                margin-bottom: 10px;
+            }
+            &.active {
+                background-color: $theme-color;
+                color:$white;
+                border: 1px solid transparent;
+                @media #{$xs}{
+                    border-bottom: 0;
+                }
+               
+            }
+            &:hover {
+                
+            }
+
+        }
+    }
+    &.nav-button2{
+        .nav-tabs{
+            border-bottom: 1px solid #E6DAD8;
+            .nav-item {
+
+            }
+            .nav-link {
+                color:#94817E;
+            }
+        }
+    }
+}
